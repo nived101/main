@@ -76,7 +76,7 @@
             </div>
             <div class="col-md-6">
             <div class="custom- card">
-                <h3><strong>Photo Gallery</strong></h3>
+                <h3><strong>Photo Gallery</strong></h3> 
                 <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -204,7 +204,104 @@
                     {% endfor %}
                 </div>
             </div>
+    </div>
+        <div class="flex">
+            <div class="row p-2 m-2">
+                <div class="col-12 m-2" id="researchWrapper">
+                    <h1 class="btn btn-link" style="font-size: 150%; color: black;"><strong>Upcomming Event</strong></h1>
+                    <div class="p-2">
+                        <div id="researchSwiper" class="swiper-container">
+                            <div class="swiper-wrapper">
+                                {% for item in eventsCarouselSlides  %}
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <a href="{{ item.link }}">
+                                            
+                                            <h6 class="card-subtitle mb-2 text-muted">{{ item.category}}</h6>
+                                            <div class="card-img-wrap">
+                                                
+                                                <img src="{% static item.img %}" class="card-img-top" alt="{{ item.alt }}">
+                                            </div>
+                                            <div class="card-body" id="Research">
+                                                
+                                                <h5 class="card-title">{{ item.title }}</h5>
+                                               
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="flex">
+            <div class="row p-2 m-2">
+                <div class="col-12 m-2" id="researchWrapper">
+                    <h1 class="btn btn-link" style="font-size: 150%; color: black;"><strong>Current Research</strong></h1>
+                    <div class="p-2">
+                        <div id="researchSwiper" class="swiper-container">
+                            <div class="swiper-wrapper">
+                                {% for item in research_carousel_slides %}
+                                <div class="swiper-slide">
+                                    <div class="card">
+                                        <a href="{{ item.link }}">
+                                            <div class="card-img-wrap">
+                                                <img src="{% static item.img %}" class="card-img-top" alt="{{ item.alt }}">
+                                            </div>
+                                            <div class="card-body" id="Research">
+                                                <h5 class="card-title">{{ item.title }}</h5>
+                                                <h6 class="card-subtitle mb-2 text-muted">{{ item.authors|join:", " }}</h6>
+                                                <p class="card-text">{{ item.dept }}</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SwiperJS CDN -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+        <script>
+            
+            document.addEventListener("DOMContentLoaded", function () {
+    var researchSwiper = new Swiper("#researchSwiper", {
+        autoplay: {  
+            // Slide every 3 seconds
+            disableOnInteraction: false,
+            },
+            loop: true,
+            slidesPerView: 4,
+            spaceBetween: 10,
+            mousewheel: true,
+            breakpoints: {
+            990: { slidesPerView: 4, spaceBetween: 10 },
+            960: { slidesPerView: 3, spaceBetween: 8 },
+            720: { slidesPerView: 2, spaceBetween: 6 },
+            320: { slidesPerView: 1, spaceBetween: 4 }
+        }
+    });
+
+    // Pause autoplay on hover
+    var researchSwiperElement = document.getElementById("researchSwiper");
+    researchSwiperElement.addEventListener("mouseenter", function () {
+        researchSwiper.autoplay.stop();
+    });
+    researchSwiperElement.addEventListener("mouseleave", function () {
+        researchSwiper.autoplay.start();
+    });
+});
+
+        </script>
+        
 
         <div class="text-center titleText">
             <strong ><h3>Statistics</h3></strong>
@@ -219,7 +316,7 @@
                         <h5>{{ stat.subtitle }}</h5>
                     </div>
                 </div>
-            </div>
+            </div> 
             {% endfor %}
         </div>
         
