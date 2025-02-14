@@ -1,0 +1,132 @@
+{% load static %}
+<header class="text-white container-fluid">
+  
+    <div class="row" id="subHeader">
+      <div class="d-none d-lg-block d-xl-block d-sm-block d-md-block">
+        <ul class="list-unstyled list-inline mb-0 mr-5">
+          <li class="list-inline-item"><a href="{% url 'home' %}"><img id="homeIcon" src="{% static 'icons/home_icon.png' %}"></a></li>
+          <li class="list-inline-item">|</li>
+          <li class="list-inline-item"><a href="#" class="text-decoration-none text-reset">About NITPY</a></li>
+          <li class="list-inline-item">|</li>
+          <li class="list-inline-item"><a href="https://www.nitpy.ac.in/Rsults/" class="text-decoration-none text-reset">Results <span class="badge badge-danger">NEW</span></a></li>
+          <li class="list-inline-item">|</li>
+          <li class="list-inline-item"><a href="#" class="text-decoration-none text-reset">Reach Us</a></li>
+          <li class="list-inline-item">|</li>
+          <li class="list-inline-item"><a href="#" class="text-decoration-none text-reset">Contacts</a></li>
+          <li class="list-inline-item">|</li>
+          <li class="list-inline-item"><a href="https://mail.nitpy.ac.in" class="text-decoration-none text-reset">Webmail</a></li>
+          <li class="list-inline-item">|</li>
+          <li class="list-inline-item"><a href="https://nitpy.samarth.ac.in/" class="text-decoration-none text-reset">Employee login (Samarth-eGov)</a></li>
+          <li class="list-inline-item">|</li>
+          <li class="list-inline-item"><a href="https://nitpy.samarth.edu.in/index.php/site/login" class="text-decoration-none text-reset">Students Login (Samarth-eGov)</a></li>
+          <li class="list-inline-item">|</li>
+          <li class="list-inline-item"><div id="google_translate_element"></div></li>
+        
+        </ul>
+      </div>
+    </div>
+  
+    <div class="row" id="mainHeader">
+      <div class="col-md-6 d-flex align-items-center">
+        <a href="{% url 'home' %}" class="text-decoration-none text-reset d-flex align-items-center">
+          <img src="{% static 'images/logo.png' %}" alt="NITPY Logo" id="logo" class="m-3">
+          <div>
+            <strong id="name">
+              தேசிய தொழில்நுட்பக் கழகம் புதுச்சேரி, காரைக்கால்<br>
+              राष्ट्रीय प्रौद्योगिकी संस्थान पुदुच्चेरी, कारैक्काल<br>
+              National Institute of Technology Puducherry, Karaikal<br>
+              <small>An Institution of National Importance, Ministry of Education</small>
+            </strong>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-6 d-flex justify-content-end align-items-center">
+        <div class="d-flex align-items-center mr-4">
+          <img class="headerIcon" src="{% static 'icons/call.svg' %}" alt="Call Icon">
+          <div class="ml-2">
+            <strong>Call Us</strong><br>
+            Academics: 04368-265235 <br>
+            Admin: 04368-265230
+          </div>
+        </div>
+        <div class="d-flex align-items-center mr-4">
+          <img class="headerIcon" src="{% static 'icons/email.svg' %}" alt="Email Icon">
+          <div class="ml-2">
+            <strong>Email</strong><br>
+            registrar[at]nitpy[dot]ac[dot]in
+          </div>
+        </div>
+        <div class="d-flex align-items-center">
+          <img class="headerIcon" src="{% static 'icons/location.svg' %}" alt="Location Icon">
+          <div class="ml-2">
+            <strong><a href="https://www.google.com/maps/place/National+Institute+of+Technology+Puducherry">Location</a></strong><br>
+            Karaikal, Puducherry
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(to right, #1E4A7C, #133C74);">
+      <div class="container-fluid">
+          <!-- Toggle Button for Small Screens -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <!-- Left Side Navigation Items -->
+          <div class="collapse navbar-collapse d-flex justify-content-between align-items-center" id="navbarNav">
+              <ul class="navbar-nav">
+                  {% for item in nav_items %}
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="{{ item.title|slugify }}Dropdown" role="button" data-bs-toggle="dropdown">
+                          {{ item.title }}
+                      </a>
+                      <ul class="dropdown-menu">
+                          {% for subitem in item.submenu %}
+                          <li><a class="dropdown-item" href="{{ subitem.url }}">{{ subitem.title }}</a></li>
+                          {% endfor %}
+                      </ul>
+                  </li>
+                  {% endfor %}
+                  <li><div class="search-bar">
+                    <input type="text" placeholder="search..." class="form-control">
+                    <button class="btn btn-primary ms-2">Search</button>
+                </div></li>
+              </ul>
+  
+              <!-- Right Side: Contact Details & Search -->
+             
+                
+                  
+              </div>
+          </div>
+      </div>
+  </nav>
+  
+  
+
+  
+    <!-- 
+  <div class="row navbar navbar-expand-lg p-0" id="navBar">
+      <div class="col-md-10">
+        <ul class="navbar-nav d-flex justify-content-center" id="navItems">
+          {% for navItem in navItems %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown">{{ navItem.title }}</a>
+            <ul class="dropdown-menu">
+              {% for item in navItem.content %}
+              <li class="dropdown-item"><a href="{{ item.url }}">{{ item.title }}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <form class="form-inline">
+          <input class="form-control" type="search" placeholder="Search...">
+          <button class="btn btn-primary" type="submit">Search</button>
+        </form>
+      </div>
+    </div> -->
+  </header>

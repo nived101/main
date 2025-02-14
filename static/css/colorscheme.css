@@ -1,0 +1,38 @@
+:root {
+    --base-color: linear-gradient(to bottom, #1b3a72, #255495, #1b3a72);
+    --base-color-light: #1b428b;
+    --base-color-highlight: #142d5a;
+
+    --main-bg-color: #f2f2f2;
+
+    --sub-header-color: linear-gradient(to bottom, #0c1d3e, #1b3a72);
+    --navbar-bg: linear-gradient(to right, #1b3a72, #255495, #1b3a72);
+    --navbar-highlight: linear-gradient(to bottom, #1b3a72, #255495, #1b3a72);
+
+    --warning-red: #b33a3a;
+
+    --construct: #f7cd13;
+    --construct-black: #333333;
+    --construct-black-hover: #000000;
+
+    --line: #555555;
+    --line-light: #dddddd;
+
+    --leftbar-gray: #1F1F1F;
+    --leftbar-gray-highlight: #111111;
+
+    --fac-card-bg: #dbdbdb;
+    --fac-card-pic-border: #adadad;
+
+    --panel-head: #2c2c2c;
+
+    
+    --black: #000000;
+    --white: #ffffff;
+
+    --facebook-blue: #39569c;
+    --twitter-blue: #26a7de;
+    --youtube-red: #b2071d;
+    --linkedin-blue: #0072b1;
+    --instagram-purple: #c13584;
+}

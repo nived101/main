@@ -1,0 +1,67 @@
+    /* Import Colors */
+    @import url('colorscheme.css');  
+
+    /* Footer Styling */
+    footer {
+        background: linear-gradient(to bottom, #1b3a72, #255495, #1b3a72);
+    }
+    
+    /* Footer Title */
+    .footerTitle {
+        font-size: 1.2rem;
+    }
+    
+    /* Quick Links */
+    #quickLinksList {
+        columns: 3;
+    }
+    
+    /* Social Media Icons */
+    #social .socialIcon {
+        height: 32px;
+        width: 32px;
+        padding: 0.2rem;
+        overflow: hidden;
+        border-radius: 32px;
+    }
+    
+    #social .socialIcon a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+    }
+    
+    #social .socialIcon a img {
+        height: 70%;
+    }
+    
+    /* Social Media Hover Effects */
+    #facebook a:hover {
+        background-color: #39569c;
+    }
+    
+    #twitter a:hover {
+        background-color: #26a7de;
+    }
+    
+    #youtube a:hover {
+        background-color: #b2071d;
+    }
+    
+    #linkedin a:hover {
+        background-color: #0072b1;
+    }
+    
+    #instagram a:hover {
+        background-color: #c13584;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 1201px) {
+        .col-lg-6 {
+            margin-top: 10px;
+        }
+    }
+    

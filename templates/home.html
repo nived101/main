@@ -1,0 +1,281 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load static %}
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<!-- SwiperJS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  
+  
+{% block title %}Home - NIT Puducherry{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div id="instituteCarousel">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            {% for slide in instituteCarouselSlides %}
+            <div class="swiper-slide">
+                <img src="{{ slide.link }}" alt="{{ slide.alt }}" class="slide-image">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+</div>
+
+<!-- Swiper Script (Moved to Bottom for Proper Execution) -->
+
+
+
+    <div class="container container-fluid">
+        <div class="overlay-cards">
+            {% for card in overlayCards %}
+            <a href="{{ card.link }}" class="card">
+                <div class="card-content">
+                    <h3>{{ card.title }}</h3>
+                    {% if card.new %}
+                    <span class="badge">NEW</span>
+                    {% endif %}
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+
+        <div class="row m-2">
+            <div class="col-xs-12 col-sm-12 col-md-6 mb-2 mt-2">
+                <div class="p-2 bg-white shadow rounded h-100">
+                    <div class="p-3">
+                        <h3><strong>Mission</strong></h3>
+                        <p style="text-align: justify;">
+                            – To create the infrastructure and academic environment on par with best benchmarks.<br>
+                            – To offer undergraduate, postgraduate and doctoral programmes in the technical fields of national
+                            importance.<br>
+                            – To collaborate for research and consultancy works with leading national and international laboratories,
+                            institutes, and industries.<br>
+                            – To train young minds in intellectual and ethical strengths for developing their capacity in the areas of
+                            science, engineering, and technology.<br>
+                            – To relentlessly pursue professional excellence with ethics.<br>
+                            – To implement continuously improving models of comprehensive education
+                          </p>
+                          <br>
+                          <h3><strong>Vision</strong></h3>
+                          <p>
+                            – To be among leading Indian Institutes for Excellent, Relevant, and value based Technical Education and
+                            Research.
+                          </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+            <div class="custom- card">
+                <h3><strong>Photo Gallery</strong></h3>
+                <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{% static 'images/instituteCarousel/homegallery/2025/Republic Day 2025.jpeg' %}" class="d-block gallery-img" alt="Image 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{% static 'images/instituteCarousel/homegallery/2024/12/ICOFT 2025.JPG' %}" class="d-block gallery-img" alt="Image 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{% static 'images/instituteCarousel/homegallery/2024/10/One day hands-on training about MY Bharat Portal.jpeg' %}" class="d-block gallery-img" alt="Image 3">
+                        </div>
+                    </div>
+                
+                    <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+                
+            </div>
+
+            <!-- Photo Gallery Carousel -->
+        
+        </div>
+            
+
+        <div class="row m-2">
+            <div class="col-xs-12 col-sm-12 col-md-6 mb-2 mt-2">
+                <div class="p-3 bg-white shadow rounded">
+                    <h1 class="btn btn-link"><strong>Announcements</strong></h1>
+                    {% for item in announcements %}
+                    <div class="h-100" id="news_item">
+                        <a href="{{ item.url }}">
+                            
+                            <p>{{ item.title }} {% if item.new %}<span class="badge badge-danger">NEW</span>{% endif %}</p>
+                        </a>
+                        <hr>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-6 mb-2 mt-2">
+                <div class="p-3 bg-white shadow rounded">
+                    <h3><strong>Welcome</strong></h3>
+                    <div id="welcome">
+                        
+                         
+                        <p id="shortText" style="text-align: justify;"><span class="quote d-inline-block text-left">“</span>
+                            National Institute of Technology Puducherry (NITPY), nestled in the scenes of Karaikal,
+                            a coastal enclave in the basin of river Kaveri is one among the ten new NITs in the Union
+                            Territory of Puducherry. Notwithstanding the tender age, NITPY is committed to produce effective
+                            and responsible technocrats who have the ability to serve the nation on its journey to growth and
+                            prosperity. In this process, students have been admitted from the academic year 2010-11 onwards
+                            through JEE Mains with 50% of seats reserved for the candidates having residence/native at Puducherry,
+                            Karaikal, Mahe, Yanam and the remaining ......  </p>
+                        <p id="fullText" style="display: none; text-align: justify;"><span class="quote d-inline-block text-left">“</span>
+                            National Institute of Technology Puducherry (NITPY), nestled in the scenes of Karaikal,
+                            a coastal enclave in the basin of river Kaveri is one among the ten new NITs in the Union
+                            Territory of Puducherry. Notwithstanding the tender age, NITPY is committed to produce effective
+                            and responsible technocrats who have the ability to serve the nation on its journey to growth and
+                            prosperity. In this process, students have been admitted from the academic year 2010-11 onwards
+                            through JEE Mains with 50% of seats reserved for the candidates having residence/native at Puducherry,
+                            Karaikal, Mahe, Yanam and the remaining 50% seats are filled on all India basis.
+                            The institute provides keen guidance in terms of experienced and expert faculties as well as
+                            facilities to sculpt the bright minds into professionally balanced individuals, capable enough
+                            to take up challenges of nature, of society and of the marketplace. Presently, 56 faculty members
+                            along with 36 non-teaching staff are employed for an overall strength of 923 students. Students
+                            are exposed to the most modern and up-to-date curriculum and contemporary developments in various
+                            disciplines of engineering. In addition to scientific and engineering skills, the institute provides
+                            scope to our upcoming graduates to get exposure to team work on experimental projects, presentations
+                            and communication skills and active participations in all extracurricular activities. Since necessity
+                            is the mother of inventions, our students have participated in every corner of need and took the chaos
+                            of early years as an opportunity to grow with self-determination and innovation. To mention, the institute
+                            website and many laboratory experiments were designed and fabricated by them. The institution is at a constant
+                            attempt of making endeavours to scale new heights by developing a synergy between studies, research, and consulting/training activities.
+                            <span class="quote d-block text-right">”</span>
+                        </p>
+                        <button id="other" onclick="toggleText()">Read More</button>
+                        <br>
+                        <span>— Director, NITPY</span>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+
+        <div class="row m-2">
+            <div class="col-xs-12 col-sm-12 col-md-6 mb-2 mt-2">
+                <div class="p-2 bg-white shadow rounded h-100">
+                    <h3 class="p-2"><strong>Annual Report</strong></h3>
+                    <span class="quote d-inline-block text-left">“</span>
+                    <p> It is a silver lining to forward the first issue of the fourth volume of NIT
+                        Puducherry bi-annual newsletter, "PARIPRASHNA".  When the whole world
+                        has transformed drastically to tackle COVID’19, the NITPY community has
+                        found ways to adapt and evolve in this difficult times.The successful completion of online classes and
+                        assessments and also the achievements and laurels of the faculty and students as seen from the contents of this newsletter, are
+                        proof to the fast paced adaptation and commitment to continuous learning.
+                        Even though the Institute has been functioning online, it has only opened new
+                        avenues and opportunities towards learning and excellence</p>
+                        <span class="quote d-block text-right">”</span>
+                        <span>— Director, NITPY</span>
+                        <br><br>
+                    <!-- <a class="float-right mb-3" href="#">Click for Report</a> -->
+                    <button class="float-right" id="other" onclick="">Click for Report</button>
+                        
+                        
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-6 mb-2 mt-2">
+                <div id="announcementWrapper" class="p-3 bg-white shadow rounded">
+                    <h1 class="btn btn-link"><strong>Tenders</strong></h1>
+                    {% for item in tenders %}
+                    <div class="swiper-slide" id="announcement">
+                        <a href="{{ item.link }}">
+                            <p>{{ item.title }} {% if item.new %}<span class="badge badge-danger">NEW</span>{% endif %}</p>
+                        </a>
+                        <hr>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center titleText">
+            <strong ><h3>Statistics</h3></strong>
+        </div>
+        <div class="row m-2 pb-2 mb-2">
+            {% for stat in stats %}
+            <div id="stats" class="d-flex col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 p-2 justify-content-center">
+                <div class="d-flex justify-content-center align-items-center circle rounded-circle">
+                    <div class="circle-inner-wrapper d-flex flex-wrap justify-content-center align-items-center">
+                        <h5>{{ stat.title }}</h5>
+                        <span class="break"></span>
+                        <h5>{{ stat.subtitle }}</h5>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+
+        <div class="row m-2">
+            <div class="col p-2 m-2 bg-white shadow rounded">
+                <h3 class="p-2"><strong>Other Links</strong></h3>
+                <div class="row m-2">
+                    <div class="col d-flex justify-content-center"><a class="p-2 m-2" id="other" href="/institute/contact"><strong>Contacts</strong></a></div>
+                    <div class="col d-flex justify-content-center"><a class="p-2 m-2 " id="other" href="/Reach_us"><strong>Reach Us</strong></a></div>
+                    <div class="col d-flex justify-content-center"><a class="p-2 m-2" id="other" href="https://www.education.gov.in/en"><strong>MoE</strong></a></div>
+                    <div class="col d-flex justify-content-center"><a class="p-2 m-2" id="other" href="https://www.nirfindia.org/Home"><strong>NIRF</strong></a></div>
+                    <div class="col d-flex justify-content-center"><a class="p-2 m-2" id="other" href="https://nitpy.irins.org/"><strong>IRINS</strong></a></div></div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var swiper = new Swiper(".swiper-container", { // Changed from ".swiper"
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            slidesPerView: 1, // Ensures one slide at a time
+            spaceBetween: 0,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    });
+    function toggleText() {
+        var shortText = document.getElementById("shortText");
+        var fullText = document.getElementById("fullText");
+        var btn = document.getElementById("readMoreBtn");
+
+        if (fullText.style.display === "none") {
+            shortText.style.display = "none";
+            fullText.style.display = "block";
+            btn.innerText = "Read Less";
+        } else {
+            shortText.style.display = "block";
+            fullText.style.display = "none";
+            btn.innerText = "Read More";
+        }
+    }
+    
+    </script>
+
+{% endblock %}

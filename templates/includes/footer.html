@@ -1,0 +1,115 @@
+{% load static %}
+<footer class="container-fluid text-white">
+  <div id="wrapper" class="row pl-5 pr-5">
+    <div id="quickLinks" class="mt-3 col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
+      <div class="mb-3"><strong class="footerTitle">Quick Links</strong></div>
+      <ul id="quickLinksList" class="list-unstyled m-0 p-0">
+        {% for item in quickLinks %}
+          <li>
+            {% if item.link %}
+              <a href="{{ item.link }}" class="text-decoration-none text-reset">{{ item.title }}</a>
+            {% elif item.url %}
+              <a href="{{ item.url }}" class="text-decoration-none text-reset">{{ item.title }}</a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div id="nationalPortals" class="mt-3 col-xs-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+      <div class="mb-3"><strong class="footerTitle">National Portals</strong></div>
+      <div id="portal_wrapper">
+        <div class="row">
+          <div class="col-xs-6 col-sm-3 col-md-6 col-lg-6 col-xl-3">
+            <div id="portalLink">
+              <a href="https://www.india.gov.in/"><img src="{% static 'images/govsites/india.gov.png' %}"></a>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3 col-md-6 col-lg-6 col-xl-3">
+            <div id="portalLink">
+              <a href="https://digitalindia.gov.in/"><img src="{% static 'images/govsites/digindia.png' %}"></a>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3 col-md-6 col-lg-6 col-xl-3">
+            <div id="portalLink">
+              <a href="http://www.makeinindia.com"><img src="{% static 'images/govsites/makeinindia.png' %}"></a>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3 col-md-6 col-lg-6 col-xl-3">
+            <div id="portalLink">
+              <a href="https://data.gov.in/"><img src="{% static 'images/govsites/data.gov.png' %}"></a>
+            </div>
+          </div>
+        </div><br>
+        <div class="row">
+          <div class="col-xs-6 col-sm-3 col-md-6 col-lg-6 col-xl-3">
+            <div id="portalLink">
+              <a href="https://www.mygov.in/"><img src="{% static 'images/govsites/MyGov-logo.png' %}"></a>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3 col-md-6 col-lg-6 col-xl-3">
+            <div id="portalLink">
+              <a href="https://www.studyinindia.gov.in/"><img src="{% static 'images/govsites/study-in-india.png' %}"></a>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3 col-md-6 col-lg-6 col-xl-3">
+            <div id="portalLink">
+              <a href="https://www.education.gov.in/en"><img src="{% static 'images/govsites/ministryofeducation.png' %}"></a>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3 col-md-6 col-lg-6 col-xl-3">
+            <div id="portalLink">
+              <a href="https://indiaai.gov.in/"><img src="{% static 'images/govsites/indiaai.png' %}"></a>
+            </div>
+          </div>
+        </div><br>
+        <div class="row">
+          <div class="col-xs-6 col-sm-3 col-md-6 col-lg-6 col-xl-3">
+            <div id="portalLink">
+              <a href="https://www.istem.gov.in/"><img src="{% static 'images/govsites/istem.png' %}"></a>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3 col-md-6 col-lg-6 col-xl-3">
+            <div id="portalLink">
+              <a href="https://www.mic.gov.in/"><img src="{% static 'images/govsites/MoE-Logo.png' %}"></a>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3 col-md-6 col-lg-6 col-xl-3">
+            <div id="portalLink">
+              <a href="https://ekbharat.gov.in/"><img src="{% static 'images/govsites/ekbharat.png' %}"></a>
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-3 col-md-6 col-lg-6 col-xl-3">
+            <div id="portalLink">
+              <a href="https://www.startupindia.gov.in/"><img src="{% static 'images/govsites/startup-india.png' %}"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="social">
+    <div id="icons_wrapper" class="d-flex justify-content-center mt-3 mb-3">
+      <div id="facebook" class="socialIcon">
+        <a href="https://www.facebook.com/NITPYOfficial/" target="_blank"><img src="{% static 'icons/facebook.png' %}"></a>
+      </div>
+      <div id="twitter" class="socialIcon">
+        <a href="https://twitter.com/nitpyofficial" target="_blank"><img src="{% static 'icons/twitter.png' %}"></a>
+      </div>
+      <div id="youtube" class="socialIcon">
+        <a href="https://www.youtube.com/channel/UCnx4kVjbf2j7y19rHNssjxQ" target="_blank"><img src="{% static 'icons/youtube.png' %}"></a>
+      </div>
+      <div id="linkedin" class="socialIcon">
+        <a href="https://in.linkedin.com/school/nitpuducherry/" target="_blank"><img src="{% static 'icons/linkedin.png' %}"></a>
+      </div>
+      <div id="instagram" class="socialIcon">
+        <a href="https://www.instagram.com/nitpuducherry/" target="_blank"><img src="{% static 'icons/instagram.png' %}"></a>
+      </div>
+    </div>
+  </div>
+  <div id="copyrights" class="text-center p-1">
+    <p>
+      Copyright &copy; 2025
+      <!-- <a href="/webteam" class="text-decoration-none text-reset"><strong>Webteam</strong></a> @ NIT Puducherry -->
+    </p>
+  </div>
+</footer>
