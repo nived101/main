@@ -215,6 +215,139 @@ def home(request):
          "link": "https://prabakarankannan.github.io/airs2024/",
          "img": "/static/images/events/AIRS_2024.jpg", "alt": ""},
     ]
+    announcements = [
+        {
+            "title": "Students_General_Rules",
+            "url": "assets/pdf/announcement/2023/12/Students_General_Rules_updated 18_20.pdf",
+        },
+        {
+            "title": "Fine Circular for Late Registration of Courses during the Even Semester of AY 2024-25",
+            "url": "assets/pdf/announcement/2025/01/Fine Circular for the Late enrollment students.pdf",
+            "new": True,
+        },
+        {
+            "title": "Circular - ADB-ROK Scholarship Program for Master's and Doctoral Studies in Korea",
+            "url": "assets/pdf/announcement/2025/01/Circular - ADB-ROK Scholarship Program for Master's and Doctoral Studies in Korea.pdf",
+            "new": True,
+        },
+        {
+            "title": "Advertisement for Recruitment of JRF under SMDP C2S Project is extended till 10-02-2025",
+            "url": "/Opportunities",
+            "new": True,
+        },
+        {
+            "title": "Advertisement for Residential Students Counselor (RSC) post in Girls Hostel at NITPY",
+            "url": "/Opportunities",
+            "new": True,
+        },
+        {
+            "title": "Fee circular for the Even semester of the AY 2024-25 for the B.Tech. (I Year) 2024 admitted batch",
+            "url": "assets/pdf/announcement/2025/01/Fee circular for the Even semester of the AY 2024-25 for the B.Tech. (I Year) 2024 admitted batch.pdf",
+            "new": True,
+        },
+        {
+            "title": "The Ph.D. Public Viva-Voce examination of Ms V. Jeyasakthi (Roll No. EN19D2002), Dept of HSS is scheduled on 19.02.2025, at 10.30 AM",
+            "url": "assets/pdf/announcement/2025/01/Viva Circular_Jeyasakthi.pdf",
+            "new": True,
+        },
+        {
+            "title": "Final Assessment Timetable for the ODD semester of the AY 2024-25 for the B.Sc. B.Ed. (I Year)",
+            "url": "/academics/exam",
+            "new": True,
+        },
+        {
+            "title": "Advertisement for Recruitment of Project Assistant Under ANRF-SERB Research Project",
+            "url": "/Opportunities",
+            "new": True,
+        },
+        {
+            "title": "Advertisement for Recruitment of Project Associate (PA) Under SERB Project",
+            "url": "/Opportunities",
+            "new": True,
+        },
+        {
+            "title": "Semester fee details for the B.Tech 2024 (I year) batch for the academic year 2024-25",
+            "url": "assets/pdf/announcement/2025/01/Semester fee details for the B.Tech 2024 (I year) batch for the academic year 2024-25.pdf",
+            "new": True,
+        },
+        {
+            "title": "Circular, Schedule, and Registration form for Make - Up Examinations First Year to be held in January - 2025",
+            "url": "/academics/exam",
+            "new": True,
+        },
+        {
+            "title": "End Semester Results for the B.Tech. (III & IV year) examination held on November 2024",
+            "url": "/academics/results",
+        },
+        {
+            "title": "Advertisement for Recruitment of Project Associate (PA) Under SERB Project Date Extended till 10.01.2025",
+            "url": "/Opportunities",
+        },
+        {
+            "title": "Advertisement for Faculty on contract – for Integrated B.Sc.-B.Ed. program",
+            "url": "/Opportunities",
+        },
+        {
+            "title": "The PhD Public Viva-Voce Examination of Mr. Nettimi Satya Sai Srinivas (Roll No. EC16D2001), Department of Electronics and Communication Engineering is scheduled on 10/01/2025, 11.00 AM",
+            "url": "assets/pdf/announcement/2024/12/Ph.D Public Viva-Voce Examination of Mr. N. S. S. Srinivas (EC16D2001)- Invitation.pdf",
+        },
+        {
+            "title": "The PhD Public Viva-Voce Examination of Mr. Vishnu Sankar S (CH20D1003), Department of Chemistry is scheduled on 24.01.2025, 11:00 AM",
+            "url": "assets/pdf/announcement/2024/12/Vishnu_ PhD Viva Notification.pdf",
+        },
+    ]
+    tendersCarouselSlides = [
+        {
+            "title": "Notice Inviting Quotation - Purchase of Soil mechanics lab accessories and equipment",
+            "link": "/static/pdf/tenders/2025/NIQ Purchase of Soil mechanics lab accessories and equipment .pdf",
+            "new": True
+        },
+        {
+            "title": "Notice Inviting Quotation - Purchase of Extensometer for structural engineering laboratory",
+            "link": "/static/pdf/tenders/2025/NIQ- Purchase of Extensometer for structural engineering laboratory.pdf",
+            "new": True
+        },
+        {
+            "title": "Notice Inviting Quotation - Workstation Computer with Advanced GPU Architecture - Last Date to receive sealed quotations is On or Before 11.02.2025 (Tuesday), 05:00 p.m.",
+            "link": "/static/pdf/tenders/2025/NITPY_NIQ_Workstation_Sc.pdf",
+            "new": True
+        },
+        {
+            "title": "Notice Inviting Quotation - Hot Stirrer Setup - Last Date to receive sealed quotations is On or Before 03.02.2025 (Monday), 05:00 p.m.",
+            "link": "/static/pdf/tenders/2025/NITPY_NIQ_Hot-Stirrer_Sc-1.pdf",
+            "new": True
+        },
+        {
+            "title": "Notice Inviting Quotation - Homogenizer Setup - Last Date to receive sealed quotations is On or Before 03.02.2025 (Monday), 05:00 p.m.",
+            "link": "/static/pdf/tenders/2025/NITPY_NIQ_Homogenizer_Sc-1.pdf",
+            "new": True
+        },
+        {
+            "title": "Notice Inviting Quotation - Probe Ultrasonicator Setup - Last Date to receive sealed quotations is On or Before 03.02.2025 (Monday), 05:00 p.m.",
+            "link": "/static/pdf/tenders/2025/NITPY_NIQ_Probe-Ultrasonicator_Sc-1.pdf",
+            "new": True
+        },
+        {
+            "title": "NIQ - Architectural design, preparation of 2D & 3D drawings and BOQ with specifications for faculty rooms type I, II and III, HoD room, Department Meeting room and Research scholar hall in the Composite Block of NITPY Campus Karaikal",
+            "link": "/static/pdf/tenders/2025/Architectural design, preparation of 2D & 3D drawings.pdf",
+            "new": True
+        },
+        {
+            "title": "Notice Inviting Quotation - Kitchen Exhaust System",
+            "link": "/static/pdf/tenders/2025/Notice Inviting Quotation - Kitchen Exhaust System.pdf",
+            "new": False
+        },
+        {
+            "title": "Notice Inviting Quotation - For the purchase of equipment for a project sanctioned by DST under the scheme NCSCT",
+            "link": "/static/pdf/tenders/2024/NIQ-DST NCSTC_extension.pdf",
+            "new": False
+        },
+        {
+            "title": "Notice Inviting Quotation - Equipment for a project sanctioned by DST under the scheme NCSCT",
+            "link": "/static/pdf/tenders/2024/NIQ-DST NCSTC.pdf",
+            "new": False
+        },
+    ]
     research_carousel_slides = [
     {
         "title": "Impact of online teaching on virtual laboratory course analysis using machine learning..",
@@ -332,7 +465,9 @@ def home(request):
         "stats": stats,
         "quickLinks": quickLinks,
         "research_carousel_slides": research_carousel_slides,
-        "eventsCarouselSlides": eventsCarouselSlides
+        "eventsCarouselSlides": eventsCarouselSlides,
+        "announcements": announcements,
+        "tendersCarouselSlides": tendersCarouselSlides,
     })
 
 def about(request):

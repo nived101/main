@@ -1,35 +1,27 @@
 {% extends 'base.html' %}
 {% load static %}
-
 <!-- Swiper CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 <!-- SwiperJS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    
-{% block title %}NIT Puducherry{% endblock %}
+
+  
+  
+{% block title %}Home - NIT Puducherry{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
-<style>
-    .swiper-announcement {
-    width: 100%;
-    height: 300px; /* Adjust based on need */
-    overflow: hidden;
-}
-
-
-</style>
 {% endblock %}
 
 {% block content %}
 
 <div id="instituteCarousel">
-    <div class="swiper-container slideshow-swiper">
+    <div class="swiper-container">
         <div class="swiper-wrapper">
             {% for slide in instituteCarouselSlides %}
             <div class="swiper-slide">
-                <img src="{{ slide.link }}" alt="{{ slide.alt }}" class="slide-image">
+                <img  src="{{ slide.link }}" alt="{{ slide.alt }}" class="slide-image">
             </div>
             {% endfor %}
         </div>
@@ -37,7 +29,6 @@
     
 </div>
 
-<!-- Swiper Script (Moved to Bottom for Proper Execution) -->
 
 
 
@@ -82,7 +73,7 @@
             </div>
             <div class="col-md-6">
             <div class="custom- card">
-                <h3><strong>Photo Gallery</strong></h3>
+                <h3><strong>Photo Gallery</strong></h3> 
                 <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
@@ -104,54 +95,89 @@
                     </button>
                 </div>
                 
+                
             </div>
 
             <!-- Photo Gallery Carousel -->
         
         </div>
-            
+       
+        
 
         <div class="row m-2">
-            <div class="col-md-6 mb-2 mt-2">
-                <div id="newsWrapper" class="p-3 bg-white shadow rounded">
+
+
+            <div class="col-xs-12 col-sm-12 col-md-6 mb-2 mt-2">
+                <div class="p-3 bg-white shadow rounded">
                     <h1 class="btn btn-link" style="font-size: 150%; color: black;">
                         <strong><a href="#" style="color: black; text-decoration: none;">Announcements</a></strong>
                     </h1>
-                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-                    <div class="swiper-container swiper-announcement">
-                        <div class="swiper-wrapper" style="display: flex; flex-direction: column; gap: 12px;">  
-                            {% for item in announcements %}
-                                <div class="swiper-slide">
-                                    <div class="p-2">
-                                        {% if item.link %}
-                                            <a href="{% url item.link %}">
-                                                <p>
-                                                    {{ item.title }}
-                                                    {% if item.new %}
-                                                        <span class="badge badge-danger">NEW</span>
-                                                    {% endif %}
-                                                </p>
-                                            </a>
-                                        {% elif item.url %}
-                                            <a href="{{ item.url }}">
-                                                <p>
-                                                    {{ item.title }}
-                                                    {% if item.new %}
-                                                        <span class="badge badge-danger">NEW</span>
-                                                    {% endif %}
-                                                </p>
-                                            </a>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            {% endfor %}
-                        </div>
-                    </div>
+                    <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        {% for item in announcements %}
+            <div class="swiper-slide">
+                <div class="p-2">
+                    {% if item.link %}
+                        <a href="{% url item.link %}">
+                            <p>
+                                {{ item.title }}
+                                {% if item.new %}
+                                    <span class="badge badge-danger">NEW</span>
+                                {% endif %}
+                            </p>
+                        </a>
+                    {% elif item.url %}
+                        <a href="{{ item.url }}">
+                            <p>
+                                {{ item.title }}
+                                {% if item.new %}
+                                    <span class="badge badge-danger">NEW</span>
+                                {% endif %}
+                            </p>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+
+<!-- Swiper CSS -->
+<style>
+  .swiper-container {
+      width: 100%;
+      height: 300px; /* Adjust based on need */
+      overflow: hidden;
+  }
+
+  .swiper-wrapper {
+      display: flex;
+      flex-direction: column !important; /* Ensure vertical stacking */
+  }
+
+  .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60px; /* Adjust based on your content size */
+      text-align: center;
+      padding: 10px;
+  }
+</style>
+
+                    
                 </div>
             </div>
             
             
-
             <div class="col-xs-12 col-sm-12 col-md-6 mb-2 mt-2">
                 <div class="p-3 bg-white shadow rounded">
                     <h3><strong>Welcome</strong></h3>
@@ -194,6 +220,7 @@
                         <br>
                     </div>
                 </div>
+                
             </div>
             
             
@@ -223,46 +250,34 @@
             </div>
 
             <div class="col-xs-12 col-sm-12 col-md-6 mb-2 mt-2">
-                <div id="newsWrapper" class="p-3 bg-white shadow rounded">
-                    <h1 class="btn btn-link" style="font-size: 150%; color: black;">
-                        <strong><a href="#" style="color: black; text-decoration: none;">Tenders</a></strong>
-                    </h1>
-                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-                    <div class="swiper-container swiper-announcement">
-                        <div class="swiper-wrapper" style="display: flex; flex-direction: column; gap: 12px;">  
-                            {% for item in tendersCarouselSlides %}
-                                <div class="swiper-slide">
-                                    <div class="p-2">
-                                        {% if item.link %}
-                                            <a href="#">
-                                                <p>
-                                                    {{ item.title }}
-                                                    {% if item.new %}
-                                                        <span class="badge badge-danger">NEW</span>
-                                                    {% endif %}
-                                                </p>
-                                            </a>
-                                        {% elif item.url %}
-                                            <a href="{{ item.url }}">
-                                                <p>
-                                                    {{ item.title }}
-                                                    {% if item.new %}
-                                                        <span class="badge badge-danger">NEW</span>
-                                                    {% endif %}
-                                                </p>
-                                            </a>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            {% endfor %}
-                        </div>
+                
+                
+               <div class="p-3 bg-white shadow rounded">
+                    <h1 class="btn btn-link"><h3><strong>Tender</strong></h3></h1>
+                    {% for item in tendersCarouselSlides %}
+                    <div class="h-100" id="news_item">
+                        <a href="{{ item.url }}">
+                            
+                            <p>{{ item.title }} {% if item.new %}<span class="badge badge-danger">NEW</span>{% endif %}</p>
+                        </a>
+                        <hr>
                     </div>
-                  
-        
-                </div>
+                    {% endfor %}
             </div>
-            
-        </div>
+                <!-- <div id="announcementWrapper" class="p-3 bg-white shadow rounded">
+                    <h1 class="btn btn-link"><strong>Tenders</strong></h1>
+                    {% for item in announcement %}
+                    <div class="h-100" id="news_item">
+                        <a href="{{ item.url }}">
+                            
+                            <p>{{ item.title }} {% if item.new %}<span class="badge badge-danger">NEW</span>{% endif %}</p>
+                        </a>
+                        <hr>
+                    </div>
+                    {% endfor %}
+                </div> -->
+            </div>
+    </div>
         <div class="flex">
             <div class="row p-2 m-2">
                 <div class="col-12 m-2" id="researchWrapper">
@@ -324,6 +339,8 @@
                 </div>
             </div>
         </div>
+    
+
         <div class="text-center titleText">
             <strong ><h3>Statistics</h3></strong>
         </div>
@@ -337,7 +354,7 @@
                         <h5>{{ stat.subtitle }}</h5>
                     </div>
                 </div>
-            </div>
+            </div> 
             {% endfor %}
         </div>
         
@@ -357,62 +374,11 @@
         </div>
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 <script>
+    
     document.addEventListener("DOMContentLoaded", function () {
-        var swiper = new Swiper(".slideshow-swiper", { // Changed from ".swiper"
-            loop: true,
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-            slidesPerView: 1, // Ensures one slide at a time
-            spaceBetween: 0,
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-        });
-    });
-    function toggleText() {
-        var shortText = document.getElementById("shortText");
-        var fullText = document.getElementById("fullText");
-        var btn = document.getElementById("readMoreBtn");
-
-        if (fullText.style.display === "none") {
-            shortText.style.display = "none";
-            fullText.style.display = "block";
-            btn.innerText = "Read Less";
-        } else {
-            shortText.style.display = "block";
-            fullText.style.display = "none";
-            btn.innerText = "Read More";
-        }
-    }
-    
-    
-    
-    </script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var swiper = new Swiper(".swiper-announcement", {
-                autoplay: {
-                    delay: 0, // Continuous autoplay
-                    disableOnInteraction: false
-                },
-                loop: true,  
-                slidesPerView: 4,  
-                direction: "vertical",  
-                mousewheel: true,  
-                speed: 12000, // Slow scrolling speed
-            });
-        });
-        document.addEventListener("DOMContentLoaded", function () {
 var researchSwiper = new Swiper("#researchSwiper", {loop: true,
             autoplay: {
                 delay: 3000,
@@ -447,5 +413,59 @@ researchSwiper.autoplay.start();
 });
 });
 
-      </script>
+</script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var swiper = new Swiper(".swiper-container", { // Changed from ".swiper"
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            slidesPerView: 1, // Ensures one slide at a time
+            spaceBetween: 0,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    });
+    function toggleText() {
+        var shortText = document.getElementById("shortText");
+        var fullText = document.getElementById("fullText");
+        var btn = document.getElementById("readMoreBtn");
+
+        if (fullText.style.display === "none") {
+            shortText.style.display = "none";
+            fullText.style.display = "block";
+            btn.innerText = "Read Less";
+        } else {
+            shortText.style.display = "block";
+            fullText.style.display = "none";
+            btn.innerText = "Read More";
+        }
+    }
+    
+    </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      var swiper = new Swiper(".swiper-container", {
+          autoplay: {
+              delay: 0, // Continuous autoplay
+              disableOnInteraction: false
+          },
+          loop: true,  
+          slidesPerView: 5,  
+          direction: "vertical",  
+          mousewheel: true,  
+          speed: 12000, // Slow scrolling speed
+      });
+  });
+</script>
+
 {% endblock %}

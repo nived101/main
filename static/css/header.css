@@ -1,41 +1,6 @@
 /* Import color scheme */
 @import url(colorscheme.css);
 
-/* General Header Styles */
-header {
-  background: linear-gradient(to bottom, #1b3a72, #255495, #1b3a72);
-  color: white;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
-
-/* Subheader Styles */
-#subHeader {
-  padding:  0;
-  font-size: 16px; /* Increased font size */
-  text-align: left; /* Align content to the left */
-}
-
-#subHeader ul {
-  display: flex;
-  gap: 0  ;
-  padding: 0;
-}
-
-#subHeader .list-inline-item a {
-  color: white;
-  transition: color 0.3s ease;
-  font-size: 14px; /* Increased font size */
-}
-
-#subHeader .list-inline-item a:hover {
-  color: #ffcc00; /* Yellow */
-}
-
-#homeIcon {
-  height: 32px;
-  padding: 0.5rem;
-}
 /* General Reset */
 body, ul, li, a {
   margin: 0;
@@ -46,19 +11,22 @@ body, ul, li, a {
 
 /* Header Styling */
 header {
+  background: linear-gradient(to bottom, #1b3a72, #255495, #1b3a72);
   color: white;
   width: 100%;
   padding-bottom: 10px;
 }
 
-/* Sub Header */
+/* Subheader Styles */
 #subHeader {
   padding: 5px 20px;
   font-size: 14px;
+  text-align: left;
 }
 
 #subHeader ul {
   display: flex;
+  gap: 0;
   justify-content: center;
   align-items: center;
 }
@@ -71,6 +39,17 @@ header {
 #subHeader a {
   color: white;
   text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 14px;
+}
+
+#subHeader a:hover {
+  color: #ffcc00;
+}
+
+#homeIcon {
+  height: 32px;
+  padding: 0.5rem;
 }
 
 /* Main Header */
@@ -104,13 +83,12 @@ header {
 
 /* Navbar */
 .navbar {
-   background: linear-gradient(to bottom, #1b3a72, #255495, #1b3a72);
-  padding: 0px 0px;
-  
+  background: linear-gradient(to bottom, #1b3a72, #255495, #1b3a72);
+  padding: 0;
 }
-.navbar-nav{
+
+.navbar-nav {
   display: flex;
-  flex-direction: space-between;
   gap: 20px;
 }
 
@@ -133,18 +111,16 @@ header {
 .dropdown-item {
   color: white;
 }
-.dropdown-toggle::after {
-  display: none !important;
-}
 
 .dropdown-item:hover {
   background: rgba(255, 255, 255, 0.2);
 }
-.dropdown:hover .dropdown-menu {
-  display: block;
+
+.dropdown-toggle::after {
+  display: none !important;
 }
 
-/* Ensure the dropdown stays visible when hovering over the menu itself */
+.dropdown:hover .dropdown-menu,
 .dropdown-menu:hover {
   display: block;
 }
@@ -172,11 +148,10 @@ header {
 /* Responsive Design */
 @media (max-width: 768px) {
   #mainHeader {
-      flex-direction: column;
-      text-align: center;
+    flex-direction: column;
+    text-align: center;
   }
-  
   .search-bar {
-      margin-top: 10px;
+    margin-top: 10px;
   }
 }
